@@ -516,6 +516,7 @@ namespace Siege_Stats
 
                 //Compare ranks
                 CompareStats(Convert.ToDecimal(intUser1NumRank), Convert.ToDecimal(intUser2NumRank), txtUser1Rank, txtUser2Rank);
+            }
 
             catch
             {
