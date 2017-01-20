@@ -494,144 +494,60 @@ namespace Siege_Stats
             try
             {
                 //Compare levels
-                if (Convert.ToInt32(txtUser1Level.Text) > Convert.ToInt32(txtUser2Level.Text))
-                {
-                    txtUser1Level.BackColor = Color.LimeGreen;
-                    txtUser2Level.BackColor = Color.Red;
-                }
-                else if (Convert.ToInt32(txtUser1Level.Text) == Convert.ToInt32(txtUser2Level.Text))
-                {
-                    txtUser1Level.BackColor = Color.LimeGreen;
-                    txtUser2Level.BackColor = Color.LimeGreen;
-                }
-                else
-                {
-                    txtUser1Level.BackColor = Color.Red;
-                    txtUser2Level.BackColor = Color.LimeGreen;
-                }
+                CompareStats(Convert.ToDecimal(txtUser1Level.Text), Convert.ToDecimal(txtUser2Level.Text), txtUser1Level, txtUser2Level);
+
                 //Compare accuracy
-                if (Convert.ToDecimal(txtUser1Acc.Text.Replace("%", "")) > Convert.ToDecimal(txtUser2Acc.Text.Replace("%", "")))
-                {
-                    txtUser1Acc.BackColor = Color.LimeGreen;
-                    txtUser2Acc.BackColor = Color.Red;
-                }
-                else if (Convert.ToDecimal(txtUser1Acc.Text.Replace("%", "")) == Convert.ToDecimal(txtUser2Acc.Text.Replace("%", "")))
-                {
-                    txtUser1Acc.BackColor = Color.LimeGreen;
-                    txtUser2Acc.BackColor = Color.LimeGreen;
-                }
-                else
-                {
-                    txtUser1Acc.BackColor = Color.Red;
-                    txtUser2Acc.BackColor = Color.LimeGreen;
-                }
+                CompareStats(Convert.ToDecimal(txtUser1Acc.Text.Replace("%", "")), Convert.ToDecimal(txtUser2Acc.Text.Replace("%", "")), txtUser1Acc, txtUser2Acc);
+
                 //Compare headshots
-                if (Convert.ToDecimal(txtUser1Head.Text.Replace("%", "")) > Convert.ToDecimal(txtUser2Head.Text.Replace("%", "")))
-                {
-                    txtUser1Head.BackColor = Color.LimeGreen;
-                    txtUser2Head.BackColor = Color.Red;
-                }
-                else if (Convert.ToDecimal(txtUser1Head.Text.Replace("%", "")) == Convert.ToDecimal(txtUser2Head.Text.Replace("%", "")))
-                {
-                    txtUser1Head.BackColor = Color.LimeGreen;
-                    txtUser2Head.BackColor = Color.LimeGreen;
-                }
-                else
-                {
-                    txtUser1Head.BackColor = Color.Red;
-                    txtUser2Head.BackColor = Color.LimeGreen;
-                }
+                CompareStats(Convert.ToDecimal(txtUser1Head.Text.Replace("%", "")), Convert.ToDecimal(txtUser2Head.Text.Replace("%", "")), txtUser1Head, txtUser2Head);
+
                 //Compare k/d
-                if (Convert.ToDecimal(txtUser1KD.Text) > Convert.ToDecimal(txtUser2KD.Text))
-                {
-                    txtUser1KD.BackColor = Color.LimeGreen;
-                    txtUser2KD.BackColor = Color.Red;
-                }
-                else if (Convert.ToDecimal(txtUser1KD.Text) == Convert.ToDecimal(txtUser2KD.Text))
-                {
-                    txtUser1KD.BackColor = Color.LimeGreen;
-                    txtUser2KD.BackColor = Color.LimeGreen;
-                }
-                else
-                {
-                    txtUser1KD.BackColor = Color.Red;
-                    txtUser2KD.BackColor = Color.LimeGreen;
-                }
+                CompareStats(Convert.ToDecimal(txtUser1KD.Text), Convert.ToDecimal(txtUser2KD.Text), txtUser1KD, txtUser2KD);
+
                 //Compare win %
-                if (Convert.ToDecimal(txtUser1WL.Text.Replace("%", "")) > Convert.ToDecimal(txtUser2WL.Text.Replace("%", "")))
-                {
-                    txtUser1WL.BackColor = Color.LimeGreen;
-                    txtUser2WL.BackColor = Color.Red;
-                }
-                else if (Convert.ToDecimal(txtUser1WL.Text.Replace("%", "")) == Convert.ToDecimal(txtUser2WL.Text.Replace("%", "")))
-                {
-                    txtUser1WL.BackColor = Color.LimeGreen;
-                    txtUser2WL.BackColor = Color.LimeGreen;
-                }
-                else
-                {
-                    txtUser1WL.BackColor = Color.Red;
-                    txtUser2WL.BackColor = Color.LimeGreen;
-                }
+                CompareStats(Convert.ToDecimal(txtUser1WL.Text.Replace("%", "")), Convert.ToDecimal(txtUser2WL.Text.Replace("%", "")), txtUser1WL, txtUser2WL);
+
                 //Compare MMR
-                if (Convert.ToDecimal(txtUser1MMR.Text) > Convert.ToDecimal(txtUser2MMR.Text))
-                {
-                    txtUser1MMR.BackColor = Color.LimeGreen;
-                    txtUser2MMR.BackColor = Color.Red;
-                }
-                else if (Convert.ToDecimal(txtUser1MMR.Text) == Convert.ToDecimal(txtUser2MMR.Text))
-                {
-                    txtUser1MMR.BackColor = Color.LimeGreen;
-                    txtUser2MMR.BackColor = Color.LimeGreen;
-                }
-                else
-                {
-                    txtUser1MMR.BackColor = Color.Red;
-                    txtUser2MMR.BackColor = Color.LimeGreen;
-                }
+                CompareStats(Convert.ToDecimal(txtUser1MMR.Text), Convert.ToDecimal(txtUser2MMR.Text), txtUser1MMR, txtUser2MMR);
+
                 //Compare play time
-                if (Convert.ToDecimal(txtUser1PT.Text.Replace("H", "")) > Convert.ToDecimal(txtUser2PT.Text.Replace("H", "")))
-                {
-                    txtUser1PT.BackColor = Color.LimeGreen;
-                    txtUser2PT.BackColor = Color.Red;
-                }
-                else if (Convert.ToDecimal(txtUser1PT.Text.Replace("H", "")) == Convert.ToDecimal(txtUser2PT.Text.Replace("H", "")))
-                {
-                    txtUser1PT.BackColor = Color.LimeGreen;
-                    txtUser2PT.BackColor = Color.LimeGreen;
-                }
-                else
-                {
-                    txtUser1PT.BackColor = Color.Red;
-                    txtUser2PT.BackColor = Color.LimeGreen;
-                //Rank
-                }
-                if (intUser1NumRank > intUser2NumRank)
-                {
-                    txtUser1Rank.BackColor = Color.LimeGreen;
-                    txtUser2Rank.BackColor = Color.Red;
-                }
-                else if (intUser1NumRank == intUser2NumRank)
-                {
-                    txtUser1Rank.BackColor = Color.LimeGreen;
-                    txtUser2Rank.BackColor = Color.LimeGreen;
-                }
-                else
-                {
-                    txtUser1Rank.BackColor = Color.Red;
-                    txtUser2Rank.BackColor = Color.LimeGreen;
-                }
-            }
+                CompareStats(Convert.ToDecimal(txtUser1PT.Text.Replace("H", "")), Convert.ToDecimal(txtUser2PT.Text.Replace("H", "")), txtUser1PT, txtUser2PT);
+
+                //Compare ranks
+                CompareStats(Convert.ToDecimal(intUser1NumRank), Convert.ToDecimal(intUser2NumRank), txtUser1Rank, txtUser2Rank);
+
             catch
             {
                 MessageBox.Show("Username(s) are invalid", "Error");
             }
+        }
+
+             //Compare Stats
+        public void CompareStats(decimal dec1, decimal dec2, TextBox txt1, TextBox txt2)
+        {
+        
+                if (dec1 > dec2)
+                {
+                    txt1.BackColor = Color.LimeGreen;
+                    txt2.BackColor = Color.Red;
+                }
+                else if (dec1 == dec2)
+                {
+                    txt1.BackColor = Color.LimeGreen;
+                    txt2.BackColor = Color.LimeGreen;
+                }
+                else
+                {
+                    txt1.BackColor = Color.Red;
+                    txt2.BackColor = Color.LimeGreen;
+                }
 
 
         }
 
-        //search string
-        public static string getBetween(string strSource, string strStart, string strEnd)
+    //search string
+    public static string getBetween(string strSource, string strStart, string strEnd)
         {
             int Start, End;
             if (strSource.Contains(strStart) && strSource.Contains(strEnd))
